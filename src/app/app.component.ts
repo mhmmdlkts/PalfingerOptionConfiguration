@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {ConfigureItem, StatusEnum} from './app.module';
+import {ConfigureItem, StatusEnum} from './main.service';
 
 @Component({
   selector: 'app-root',
@@ -7,7 +7,7 @@ import {ConfigureItem, StatusEnum} from './app.module';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'BewerbungsAufgabe';
+  title = 'Palfinger';
 
   configureItem: ConfigureItem[];
 
@@ -17,15 +17,15 @@ export class AppComponent {
         code: 'SAM',
         name: 'Schwenkwinkelerfassung',
         status: StatusEnum.NOT_AVAILABLE,
-        info: 'sam?',
+        info: 'Die Schrägachsenmaschine hat eine berührungslose Schwenkwinkelerfassung für die Zylindertrommel mit einem am Gehäuse befestigten Sensor, an dem die Zylindertrommel vorbei oder entlang schwenkbar ist. Vorzugsweise ist die Schwenkwinkelerfassung magnetisch.',
         options: null,
-        reason: 'who knows',
+        reason: 'Kein Schwenkwinkelerfassung auf Lager.',
       },
       {
         code: 'WOPT',
         name: 'Optische Überlastwarnung',
         status: StatusEnum.SELECTED,
-        info: 'wopt?',
+        info: 'Bei der Zugmesslasche der KAK-F Serie handelt es sich um Messgeräte zum Messen von Zugkräften wie Sie zum Beispiel bei einer Kranwaage eingesetzt werden.',
         options: null,
         reason: null,
       },
@@ -33,7 +33,7 @@ export class AppComponent {
         code: 'STU01',
         name: 'Stundenzähler',
         status: StatusEnum.REQUIRED,
-        info: 'STU01?',
+        info: 'Ein Betriebsstundenzähler misst die sich aufsummierenden Stunden, die eine Maschine oder ein Gerät seit Inbetriebnahme gelaufen ist.',
         options: null,
         reason: null,
       },
@@ -41,7 +41,7 @@ export class AppComponent {
         code: 'HUPE',
         name: 'Hupe',
         status: StatusEnum.NOT_SELECTED,
-        info: 'hupe?',
+        info: 'Eine Hupe ist ein Gerät zur Erzeugung von Schallzeichen. Sie wird je nach Bauweise entweder mit elektrischer Energie oder Druckluft betrieben.',
         options: null,
         reason: null,
       },
@@ -49,7 +49,7 @@ export class AppComponent {
         code: 'RAL',
         name: 'Sonderfarbe RAL',
         status: StatusEnum.NOT_SELECTED,
-        info: 'ral?',
+        info: 'Für eine bessere Harmonie, haben Sie bei uns die Möglichkeit Ihre Terrassenüberdachung in allen RAL Farben zu bekommen. Die Konstruktion wird dann in dem gewünschten Farbton pulverbeschichtet.',
         options: ['Red', 'Green', 'Yellow'],
         reason: null,
       },

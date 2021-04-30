@@ -3,9 +3,12 @@
   display: flex;
 }
 
+.btn-pal{
+  width: 130px;
+}
+
 .part-container {
   float: left;
-
   margin: auto 0;
 }
 
@@ -48,6 +51,11 @@ $status-color-width: 7.5px;
 .name-container {
   @extend .part-container;
   width: 200px;
+}
+
+.more-container {
+  @extend .part-container;
+  padding-left: 20px;
 }
 
 .bottom-border {

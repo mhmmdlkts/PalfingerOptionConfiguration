@@ -13,13 +13,58 @@
   <div class="name-container">
     <span>{{configureItem.name}}</span>
   </div>
-  <div>
-    <!--TODO-->
-  </div>
-  <button>
-    <mat-icon>mic</mat-icon>
-    Start Recording
+  <!--<div>
+    TODO
+  </div>-->
+  <button *ngIf="isNotAvailable()" class="btn btn-light btn-pal" (click)="openReasonModal()">
+    GRÜNDE
   </button>
+
+  <button *ngIf="showButton()" class="btn btn-light btn-pal" (click)="clickSelect()" [disabled]="isRequired()">
+    {{isNotSelected()?"AUSWÄHLEN":"ABWÄHLEN"}}
+  </button>
+
+  <div ngbDropdown *ngIf="hasOptions()" class="d-inline-block btn-pal part-container">
+    <button class="btn btn-outline-secondary" id="dropdownBasic1" ngbDropdownToggle>{{selectedOption==null?"AUSWÄHLEN":selectedOption}}</button>
+    <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+      <button (click)="setOption(item)" ngbDropdownItem *ngFor="let item of configureItem.options">{{item}}</button>
+      <button (click)="setOption(null)" ngbDropdownItem>ABWÄHLEN</button>
+    </div>
+  </div>
+
+  <div ngbDropdown class="part-container more-container" style="text-align: right;">
+    <button class="btn" id="dropdownBasic2" ngbDropdownToggle>
+      <mat-icon>more_vert</mat-icon>
+    </button>
+    <div ngbDropdownMenu aria-labelledby="dropdownBasic2">
+      <button *ngIf="configureItem.info != null" (click)="openInfoModal()" ngbDropdownItem>INFO</button>
+    </div>
+  </div>
+
 </div>
+
+<ng-template #reasonModal let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title">{{configureItem.name}}</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <p> {{configureItem.reason}} </p>
+  </div>
+</ng-template>
+
+<ng-template #infoModal let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title">{{configureItem.name}}</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <p> {{configureItem.info}} </p>
+  </div>
+</ng-template>
 
 <div class="bottom-border"></div>
