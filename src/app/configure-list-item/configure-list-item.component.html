@@ -1,0 +1,25 @@
+<div class="item-container">
+  <div class="item-status-color bg-color-{{configureItem.status.toLocaleString().toLowerCase()}}">
+  </div>
+  <div class="image-container">
+    <img height="50x" src="assets/{{configureItem.code.toLowerCase()}}.png">
+  </div>
+  <div class="code-container">
+    <span>{{configureItem.code}}</span>
+  </div>
+  <div class="status-container color-{{configureItem.status.toLocaleString().toLowerCase()}}">
+    <span>{{getStatusInfo()}}</span>
+  </div>
+  <div class="name-container">
+    <span>{{configureItem.name}}</span>
+  </div>
+  <div>
+    <!--TODO-->
+  </div>
+  <button>
+    <mat-icon>mic</mat-icon>
+    Start Recording
+  </button>
+</div>
+
+<div class="bottom-border"></div>

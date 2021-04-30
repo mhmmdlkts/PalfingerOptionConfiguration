@@ -1,0 +1,58 @@
+.item-container {
+  min-height: 75px;
+  display: flex;
+}
+
+.part-container {
+  float: left;
+
+  margin: auto 0;
+}
+
+$status-not-available: #f4b84c;
+$status-selected: #4ea27b;
+$status-required: #6d767d;
+
+$status-color-width: 7.5px;
+
+.color-selected {color: $status-selected;}
+.color-required {color: $status-required;}
+.color-not_available {color: $status-not-available;}
+
+.bg-color-selected {background-color: $status-selected;}
+.bg-color-required {background-color: $status-required;}
+.bg-color-not_available {background-color: $status-not-available;}
+
+.item-status-color {
+  float: left;
+  width: $status-color-width;
+}
+
+.image-container {
+  @extend .part-container;
+  margin: auto 30px;
+}
+
+.code-container {
+  @extend .part-container;
+  width: 60px;
+
+}
+
+.status-container {
+  @extend .part-container;
+  width: 150px;
+
+}
+
+.name-container {
+  @extend .part-container;
+  width: 200px;
+}
+
+.bottom-border {
+  width: 100%;
+  height: 1px;
+  margin-left: $status-color-width;
+  background-color: gainsboro;
+}
